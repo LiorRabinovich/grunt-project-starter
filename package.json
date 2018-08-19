@@ -1,0 +1,22 @@
+{
+  "name": "grunt-project-stater",
+  "version": "1.0.0",
+  "description": "Simple Grunt setup to start new projects quickly",
+  "license": "MIT",
+  "scripts": {
+    "start": "grunt"
+  },
+  "author": "Lior Rabinovich",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^7.0.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {}
+}
