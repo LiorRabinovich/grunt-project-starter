@@ -1,5 +1,6 @@
 // Require and get path
-let path = require('path');
+const path = require('path');
+const port = 9000;
 
 module.exports = function (grunt) {
     // Load npm tasks for grunt
@@ -8,6 +9,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Config grunt
@@ -69,34 +71,35 @@ module.exports = function (grunt) {
                 }
             }
         },
-        watch: {
-            gruntfile: {
-                files: 'Gruntfile.js',
-                tasks: ['default']
-            },
-            compass: {
-                files: ['src/assets/sass/*.scss','src/assets/sprites/**/*.png'],
-                tasks: ['compass'],
+        connect: {
+            server: {
                 options: {
-                    spawn: false,
+                    livereload: true,
+                    base: path.join(__dirname, 'dist'),
+                    port: port,
+                    open: true,
+                    hostname: 'localhost'
                 }
+            }
+        },
+        watch: {
+            compass: {
+                files: ['src/assets/sass/*.scss', 'src/assets/sprites/**/*.png'],
+                tasks: ['compass']
             },
             js: {
                 files: ['src/assets/js/*.js'],
-                tasks: ['babel'],
-                options: {
-                    spawn: false,
-                }
+                tasks: ['babel']
             },
             html: {
                 files: ['src/index.html'],
-                tasks: ['htmlmin'],
-                options: {
-                    spawn: false,
-                }
-            }
+                tasks: ['htmlmin']
+            },
+            options: {
+                livereload: true
+            },
         }
     });
 
-    grunt.registerTask('default', ['clean', 'compass', 'babel', 'copy', 'htmlmin', 'watch']);
+    grunt.registerTask('default', ['clean', 'compass', 'babel', 'copy', 'htmlmin', 'connect', 'watch']);
 };
