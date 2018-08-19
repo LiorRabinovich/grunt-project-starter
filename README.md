@@ -6,7 +6,6 @@ Simple Grunt setup to start new projects quickly
 * Build and Minify javascript files from `src/assets/js/*.js` to `dist/assets/js/*.min.js`
 * copy `fonts`,`img`,`sounds` from `src/assets` to `dist/assets`
 * Minify html from `src/index.html` to `dist/index.html`
-* Replace `<?%BASE_URL?%>` to `dist` in `index.html`
 * Watch on all `dist` files
 * Create and run server from `dist` folder
 

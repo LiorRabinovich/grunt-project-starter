@@ -1,0 +1,9 @@
+$current-prefix: true;
+
+@import "compass/utilities/sprites";
+@import "social-media-icons/*.png";
+@include all-social-media-icons-sprites(true);
+
+@import "compass/utilities/sprites";
+@import "animals-icons/*.png";
+@include all-animals-icons-sprites(true);

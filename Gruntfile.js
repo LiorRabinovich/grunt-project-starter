@@ -8,7 +8,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Config grunt
@@ -76,7 +75,7 @@ module.exports = function (grunt) {
                 tasks: ['default']
             },
             compass: {
-                files: ['src/assets/sass/*.scss'],
+                files: ['src/assets/sass/*.scss','src/assets/sprites/**/*.png'],
                 tasks: ['compass'],
                 options: {
                     spawn: false,

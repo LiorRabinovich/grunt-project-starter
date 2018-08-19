@@ -1,6 +1,8 @@
 class bla {
     constructor() {
-        let bla = 'dfsgarfh';
+        let bla = 'test';
         alert(bla);
     }
 }
+
+new bla();
