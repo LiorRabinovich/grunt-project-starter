@@ -3,7 +3,7 @@ Simple Grunt setup to start new projects quickly
 
 ## What's in the process?
 * Build css files from `src/assets/scss/*.scss` to `dist/assets/css/*.css`
-* Build and Minify javascript files from `src/assets/js/*.js` to `dist/assets/js/*.min.js`
+* Build and Minify with Babel javascript files from `src/assets/js/*.js` to `dist/assets/js/*.min.js` 
 * Copy `fonts`,`img`,`sounds` from `src/assets` to `dist/assets`
 * Minify html from `src/index.html` to `dist/index.html`
 * Watch on all `dist` files
@@ -30,4 +30,4 @@ Simple Grunt setup to start new projects quickly
 * run `npm install`
 
 ## How to start Grunt
-* run `npm start`
+* run `npm start` or `grunt`
