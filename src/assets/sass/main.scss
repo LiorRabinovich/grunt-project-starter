@@ -1,7 +1,6 @@
 @import "reset";
 @import "sprites";
 @import "fonts";
-
 body {
     font-family: 'Open Sans';
     text-align: center;
@@ -20,5 +19,11 @@ li {
     margin-right: 5px;
     &:last-child {
         margin-right: 0;
+    }
+    >div {
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
