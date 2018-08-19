@@ -1,6 +1,7 @@
 // Require and get path
 const path = require('path');
 const port = 9000;
+const buildFolder = 'dist';
 
 module.exports = function (grunt) {
     // Load npm tasks for grunt
@@ -16,7 +17,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
-            folder: ['dist/'],
+            folder: [buildFolder + '/'],
         },
         compass: {
             dist: {
@@ -36,7 +37,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'src/assets/js',
                     src: ['*.js'],
-                    dest: 'dist/assets/js',
+                    dest: buildFolder + '/assets/js',
                 }]
             }
         },
@@ -46,17 +47,17 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'src/assets/img',
                     src: ['**'],
-                    dest: 'dist/assets/img',
+                    dest: buildFolder + '/assets/img',
                 }, {
                     expand: true,
                     cwd: 'src/assets/sounds',
                     src: ['**'],
-                    dest: 'dist/assets/sounds',
+                    dest: buildFolder + '/assets/sounds',
                 }, {
                     expand: true,
                     cwd: 'src/assets/fonts',
                     src: ['**'],
-                    dest: 'dist/assets/fonts',
+                    dest: buildFolder + '/assets/fonts',
                 }]
             }
         },
@@ -67,7 +68,7 @@ module.exports = function (grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    'dist/index.html': 'src/index.html'
+                    [buildFolder + '/index.html']: 'src/index.html'
                 }
             }
         },
@@ -75,7 +76,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     livereload: true,
-                    base: path.join(__dirname, 'dist'),
+                    base: path.join(__dirname, buildFolder),
                     port: port,
                     open: true,
                     hostname: 'localhost'
